@@ -4,22 +4,34 @@ public class HordesScript : MonoBehaviour
 {
 
     public GameObject player;
+    public GameObject doisOuro;
 
     private bool HordaEstaEmAndamento = false;
 
     private float distancia = 0;
 
     private int kills = 0;
+
+
+    [Header("Controle de Horda")]
+    public int enemiesCount = 15;
+    public int enemiesCountControl;
+    public bool hordeBool = true;
+
+    [Header("Timer de Horda")]
+    public float timerHordeControl = 5f;
+    public float timerControl;
     
     void Start()
     {
-        
+        enemiesCountControl = enemiesCount;
+        timerControl = timerHordeControl;
     }
 
     
     void Update()
     {
-        Debug.Log("dis " + distancia);
+        //Debug.Log("dis " + distancia);
         if(Input.GetKeyDown(KeyCode.K)){
 
                 kills += 1;
@@ -48,7 +60,7 @@ public class HordesScript : MonoBehaviour
 
             if(Input.GetKey(KeyCode.W)){
 
-                player.transform.position += new Vector3(0f,0.1f,0f);
+                player.transform.position += transform.up * 3f * Time.deltaTime;
                 distancia += 10 * Time.deltaTime;
 
             }
@@ -78,7 +90,30 @@ public class HordesScript : MonoBehaviour
 
     private void horda1(){
 
-       HordaEstaEmAndamento = true;
+        //inicio
+        timerHordeControl -= Time.deltaTime;
+
+        HordaEstaEmAndamento = true;
+
+        if(hordeBool && enemiesCountControl > 0 && timerHordeControl <= 0){
+        Instantiate(doisOuro, new Vector3(Random.Range(-9f, 9f), transform.position.y, transform.position.z), transform.rotation);
+        enemiesCountControl -= 1;
+        Debug.Log("Instanciou" + enemiesCountControl);
+        } else if(enemiesCountControl == 0){
+        hordeBool = false;
+        }
+
+        if(timerHordeControl < 0){
+            timerHordeControl = timerControl;
+
+        }
+
+        //enemiesCountControl quantidade de inimigos da horda
+        //timerHordeControl tempo de horda
+        //hordeBool controle booleano se pode iniciar instancias ou nao
+
+        //fim
+
 
         if(kills == 1){
 

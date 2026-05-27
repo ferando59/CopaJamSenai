@@ -263,6 +263,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &4998539146996181275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7084792470747554344}
+  m_Layer: 0
+  m_Name: BalaExitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7084792470747554344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4998539146996181275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.599, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227205745906184051}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7003839379136750433
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 227205745906184051}
   - component: {fileID: 8897591805297779007}
+  - component: {fileID: 2602816912737207394}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -292,7 +324,8 @@ Transform:
   m_LocalPosition: {x: -0.55, y: -1.55, z: 0}
   m_LocalScale: {x: 1.592, y: 2.6575, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7084792470747554344}
   m_Father: {fileID: 6081471040960419946}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8897591805297779007
@@ -354,6 +387,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2602816912737207394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7003839379136750433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8c2ed6d60d73f4783626c63432d9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CannonScript
+  bala: {fileID: 7721749761230387755, guid: 7cab942f6b4e1db46b9a92ea50d9131e, type: 3}
+  balaExitPoint: {fileID: 4998539146996181275}
 --- !u!1 &7734809299757799121
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7208565161748927147}
+  - component: {fileID: 2423629535232879525}
   m_Layer: 0
   m_Name: hordes
   m_TagString: Untagged
@@ -385,3 +433,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6081471040960419946}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2423629535232879525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734809299757799121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8abbc46d5ca56614aad8ca99bade078b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HordesScript
+  player: {fileID: 1310030073627592452}
