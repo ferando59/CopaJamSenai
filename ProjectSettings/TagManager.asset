@@ -6,6 +6,11 @@ TagManager:
   tags:
   - enemy
   - bala
+  - EneBala
+  - EneBalaSniper
+  - EneBalaGranada
+  - EneBalaMiniGun
+  - tankDanoBox
   layers:
   - Default
   - TransparentFX

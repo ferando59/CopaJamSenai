@@ -39,7 +39,7 @@ public class treisPausScript : MonoBehaviour
 
         if(distanciaDoInimigoEstaCerta == false){
             
-            transform.position += transform.up * -1f * Time.deltaTime;
+            transform.position += transform.up * -4f * Time.deltaTime;
             distanciaDoInimigo++;
 
         }
@@ -115,6 +115,7 @@ public class treisPausScript : MonoBehaviour
 
            
             HS.kills+=1;
+            HS.points+=300;
             Destroy(gameObject);
 
         }
