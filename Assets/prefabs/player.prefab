@@ -427,7 +427,7 @@ Transform:
   m_GameObject: {fileID: 7734809299757799121}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.54163, y: 8.41459, z: 0}
+  m_LocalPosition: {x: -0.54163, y: 7.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -446,3 +446,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HordesScript
   player: {fileID: 1310030073627592452}
+  doisOuro: {fileID: 5603318982936889914, guid: f25feb87890cb834ba7d89c9b26eba5c, type: 3}
+  kills: 0
+  hordeBool: 1

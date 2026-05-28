@@ -25,10 +25,11 @@ public class BalaScript : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other){
+    private void OnTriggerEnter2D(Collider2D other){
 
         if(other.CompareTag("enemy")){
 
+            Debug.Log("acertei");
             Destroy(gameObject);
 
         }

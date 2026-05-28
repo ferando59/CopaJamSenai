@@ -10,17 +10,17 @@ public class HordesScript : MonoBehaviour
 
     private float distancia = 0;
 
-    private int kills = 0;
+    public int kills = 0;
 
 
     [Header("Controle de Horda")]
-    public int enemiesCount = 15;
-    public int enemiesCountControl;
+    private int enemiesCount = 3;
+    private int enemiesCountControl;
     public bool hordeBool = true;
 
     [Header("Timer de Horda")]
-    public float timerHordeControl = 5f;
-    public float timerControl;
+    private float timerHordeControl = 5f;
+    private float timerControl;
     
     void Start()
     {
@@ -96,7 +96,7 @@ public class HordesScript : MonoBehaviour
         HordaEstaEmAndamento = true;
 
         if(hordeBool && enemiesCountControl > 0 && timerHordeControl <= 0){
-        Instantiate(doisOuro, new Vector3(Random.Range(-9f, 9f), transform.position.y, transform.position.z), transform.rotation);
+        Instantiate(doisOuro, new Vector3(Random.Range(-8f, 8f), transform.position.y, transform.position.z), transform.rotation);
         enemiesCountControl -= 1;
         Debug.Log("Instanciou" + enemiesCountControl);
         } else if(enemiesCountControl == 0){
