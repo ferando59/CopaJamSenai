@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class doisOurosScripts : MonoBehaviour
+public class treisPausScript : MonoBehaviour
 {
     private int estado;
     private float tempoEstado;
@@ -36,6 +36,7 @@ public class doisOurosScripts : MonoBehaviour
    
     void Update()
     {
+
         if(distanciaDoInimigoEstaCerta == false){
             
             transform.position += transform.up * -1f * Time.deltaTime;

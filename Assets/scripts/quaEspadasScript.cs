@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class doisOurosScripts : MonoBehaviour
+public class quaEspadasScript : MonoBehaviour
 {
     private int estado;
     private float tempoEstado;
@@ -10,7 +10,7 @@ public class doisOurosScripts : MonoBehaviour
 
     private bool DanoDeBala;
 
-    private int vida = 3;
+    private int vida = 5;
 
     //public GameObject horda;
     HordesScript HS;
@@ -28,14 +28,15 @@ public class doisOurosScripts : MonoBehaviour
 
         estado = Random.Range(0, 7);
 
-        if(estado >= 0 && estado <= 2) tempoEstado = Random.Range(0.1f,0.5f);
+        if(estado == 6) tempoEstado = Random.Range(0.1f,0.5f);
         if(estado >= 3 && estado <= 5) tempoEstado = Random.Range(1f,5f);
-        if(estado == 6) tempoEstado = 0.00001f;
+        if(estado >= 0 && estado <= 2) tempoEstado = 0.00001f;
     }
 
    
     void Update()
     {
+
         if(distanciaDoInimigoEstaCerta == false){
             
             transform.position += transform.up * -1f * Time.deltaTime;
@@ -57,9 +58,9 @@ public class doisOurosScripts : MonoBehaviour
         if(tempoEstado <= 0)
           EscolherEstado();
 
-        if(estado >= 0 && estado <= 2) andar();
+        if(estado == 6) andar();
         if(estado >= 3 && estado <= 5) parar();
-        if(estado == 6){ 
+        if(estado >= 0 && estado <= 2){ 
 
             atirar();
             Debug.Log("era pra atirar bro");
