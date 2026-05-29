@@ -44,7 +44,7 @@ public class treisPausScript : MonoBehaviour
 
         }
 
-        if(distanciaDoInimigo == 500){
+        if(distanciaDoInimigo == 200){
             
             distanciaDoInimigoEstaCerta = true;
 

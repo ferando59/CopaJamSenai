@@ -26,6 +26,11 @@ public class ValetePausScript : MonoBehaviour
     public float intervaloTiros = 1;
     private float intervalo;
 
+    public AudioSource valeteAudio;
+    public AudioClip miniGun;
+
+    private int podeTocar;
+
 
     void Start()
     {
@@ -39,13 +44,23 @@ public class ValetePausScript : MonoBehaviour
 
         if(estado >= 0 && estado <= 2) tempoEstado = Random.Range(0.5f,5f);
         if(estado >= 3 && estado <= 5) tempoEstado = Random.Range(0.5f,5f);
-        if(estado == 6) tempoEstado = 1f;
+        if(estado == 6) tempoEstado = 1.5f;
         if(estado == 7) tempoEstado = 0.000001f;
+
+        podeTocar = estado;
     }
 
    
     void Update()
     {
+
+        if(podeTocar == 6)
+        {
+            podeTocar = 0;
+            valeteAudio.PlayOneShot(miniGun);
+
+        }
+
         intervaloTiros -= Time.deltaTime;
 
         if(distanciaDoInimigoEstaCerta == false){
@@ -55,7 +70,7 @@ public class ValetePausScript : MonoBehaviour
 
         }
 
-        if(distanciaDoInimigo == 500){
+        if(distanciaDoInimigo == 200){
             
             distanciaDoInimigoEstaCerta = true;
 
@@ -82,7 +97,7 @@ public class ValetePausScript : MonoBehaviour
 
     void andar(){
 
-        if(disHorizontal < 1000){
+        if(disHorizontal < 400){
         transform.position += transform.right * -3f * Time.deltaTime;
         disHorizontal++;
         }
@@ -91,7 +106,7 @@ public class ValetePausScript : MonoBehaviour
 
     void parar(){
         
-        if(disHorizontal > -1000){
+        if(disHorizontal > -400){
         transform.position += transform.right * 3f * Time.deltaTime;
         disHorizontal--;
         }
