@@ -25,6 +25,9 @@ public class HordesScript : MonoBehaviour
     private float timerHordeControl = 5f;
     private float timerControl;
 
+    public AudioSource HordeAudio;
+    public AudioSource motorEngine;
+
     
     
     void Start()
@@ -70,6 +73,18 @@ public class HordesScript : MonoBehaviour
 
             }
 
+            if(Input.GetKeyDown(KeyCode.W)){
+
+                motorEngine.Play();
+
+            }
+
+             if(Input.GetKeyUp(KeyCode.W)){
+                
+                motorEngine.Stop();
+
+            }
+
             /*
             if(Input.GetKey(KeyCode.S)){
 
@@ -82,6 +97,7 @@ public class HordesScript : MonoBehaviour
             if(HordaEstaEmAndamento == true){
 
                 NaoPode = true;
+                
 
             }else{
 
@@ -94,6 +110,8 @@ public class HordesScript : MonoBehaviour
     }
 
     private void horda1(){
+
+        motorEngine.Stop();
 
     if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;

@@ -5,6 +5,9 @@ public class CannonScript : MonoBehaviour
 
     public GameObject bala;
     public GameObject balaExitPoint;
+
+    public AudioSource cannonAudio;
+    public AudioClip shot;
     
     void Start()
     {
@@ -16,6 +19,7 @@ public class CannonScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.UpArrow)){
 
            Instantiate(bala, balaExitPoint.transform.position, transform.rotation);
+           cannonAudio.PlayOneShot(shot);
 
         }
 
