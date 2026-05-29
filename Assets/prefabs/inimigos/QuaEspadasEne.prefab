@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::quaEspadasScript
   balaExitPointDoisOuro: {fileID: 5769522977233167425}
-  bala: {fileID: 7133595060827951300, guid: 175c53b882aaf5c4da31033770a78dc5, type: 3}
+  bala: {fileID: 4739667498295521538, guid: 6e6d397f2a97cd445b6406606a07d626, type: 3}
 --- !u!1 &5769522977233167425
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class doisOurosScripts : MonoBehaviour
+public class ValetePausScript : MonoBehaviour
 {
     private int estado;
     private float tempoEstado;
 
     public GameObject balaExitPointDoisOuro;
+    public GameObject balaExitPointMiniGun1;
+    public GameObject balaExitPointMiniGun2;
     public GameObject bala;
+    public GameObject granandaBala;
 
     private bool DanoDeBala;
 
-    private int vida = 3;
+    private int vida = 50;
 
     //public GameObject horda;
     HordesScript HS;
@@ -18,24 +21,33 @@ public class doisOurosScripts : MonoBehaviour
     private bool distanciaDoInimigoEstaCerta = false;
     private int distanciaDoInimigo = 0;
 
+    private int disHorizontal = 0;
+
+    public float intervaloTiros = 1;
+    private float intervalo;
+
 
     void Start()
     {
        HS = FindAnyObjectByType<HordesScript>();
+       intervalo = intervaloTiros;
     }
 
     void EscolherEstado(){
 
-        estado = Random.Range(0, 7);
+        estado = Random.Range(0, 8);
 
-        if(estado >= 0 && estado <= 2) tempoEstado = Random.Range(0.1f,0.5f);
-        if(estado >= 3 && estado <= 5) tempoEstado = Random.Range(1f,5f);
-        if(estado == 6) tempoEstado = 0.00001f;
+        if(estado >= 0 && estado <= 2) tempoEstado = Random.Range(0.5f,5f);
+        if(estado >= 3 && estado <= 5) tempoEstado = Random.Range(0.5f,5f);
+        if(estado == 6) tempoEstado = 1f;
+        if(estado == 7) tempoEstado = 0.000001f;
     }
 
    
     void Update()
     {
+        intervaloTiros -= Time.deltaTime;
+
         if(distanciaDoInimigoEstaCerta == false){
             
             transform.position += transform.up * -4f * Time.deltaTime;
@@ -62,26 +74,46 @@ public class doisOurosScripts : MonoBehaviour
         if(estado == 6){ 
 
             atirar();
-            Debug.Log("era pra atirar bro");
+            //Debug.Log("era pra atirar bro");
         }
+        if(estado == 7) granada();
         
     }
 
     void andar(){
 
-        transform.position += transform.up * -1f * Time.deltaTime;
+        if(disHorizontal < 1000){
+        transform.position += transform.right * -3f * Time.deltaTime;
+        disHorizontal++;
+        }
 
     }
 
     void parar(){
-
-
+        
+        if(disHorizontal > -1000){
+        transform.position += transform.right * 3f * Time.deltaTime;
+        disHorizontal--;
+        }
 
     }
 
     void atirar(){
 
-        Instantiate(bala, balaExitPointDoisOuro.transform.position, transform.rotation * Quaternion.Euler(0, 0, 180));
+        if(intervaloTiros <= 0){
+        Instantiate(bala, balaExitPointMiniGun1.transform.position, transform.rotation * Quaternion.Euler(0, 0, 180));
+        Instantiate(bala, balaExitPointMiniGun2.transform.position, transform.rotation * Quaternion.Euler(0, 0, 180));
+        }
+
+        if(intervaloTiros <= 0){
+            intervaloTiros = intervalo;
+        }
+
+    }
+
+    void granada(){
+
+        Instantiate(granandaBala, balaExitPointDoisOuro.transform.position, transform.rotation * Quaternion.Euler(0, 0, 180));
 
     }
 
@@ -114,7 +146,7 @@ public class doisOurosScripts : MonoBehaviour
 
            
             HS.kills+=1;
-            HS.points+=200;
+            HS.points+=10000;
             Destroy(gameObject);
 
         }
