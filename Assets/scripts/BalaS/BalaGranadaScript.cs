@@ -4,6 +4,7 @@ public class BalaGranadaScript : MonoBehaviour
 {
 
     private float tempoDeTela = 0;
+    public GameObject explosion;
     
     void Start()
     {
@@ -13,12 +14,13 @@ public class BalaGranadaScript : MonoBehaviour
     
     void FixedUpdate()
     {
-        transform.position += transform.up * 5f * Time.deltaTime;
+        transform.position += transform.up * 10f * Time.deltaTime;
 
         tempoDeTela++;
 
-        if(tempoDeTela == 100){
+        if(tempoDeTela == 35){
 
+            Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
 
         }
@@ -29,7 +31,8 @@ public class BalaGranadaScript : MonoBehaviour
 
         if(other.CompareTag("tankDanoBox")){
 
-            //Debug.Log("acertei");
+            Debug.Log("acertei");
+             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
 
         }

@@ -10,6 +10,8 @@ public class quaEspadasScript : MonoBehaviour
 
     private bool DanoDeBala;
 
+     private bool DanoDeExplosion;
+
     private int vida = 5;
 
     //public GameObject horda;
@@ -51,6 +53,7 @@ public class quaEspadasScript : MonoBehaviour
         }
 
         TomarDanoDeBala();
+        TomarDanoDeExplosion();
         Morrer();
 
         tempoEstado -= Time.deltaTime;
@@ -95,6 +98,13 @@ public class quaEspadasScript : MonoBehaviour
 
         }
 
+        if(other.CompareTag("explosion")){
+
+           
+            DanoDeExplosion = true;
+
+        }
+
     }
 
     void TomarDanoDeBala(){
@@ -104,6 +114,18 @@ public class quaEspadasScript : MonoBehaviour
             Debug.Log("era pra ter tomado dano");
             vida -= 1;
             DanoDeBala = false;
+            
+        }
+        
+    }
+
+    void TomarDanoDeExplosion(){
+
+        if(DanoDeExplosion == true){
+            
+           
+            vida -= 5;
+            DanoDeExplosion = false;
             
         }
         

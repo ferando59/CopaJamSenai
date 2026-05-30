@@ -10,6 +10,8 @@ public class doisOurosScripts : MonoBehaviour
 
     private bool DanoDeBala;
 
+    private bool DanoDeExplosion;
+
     private int vida = 3;
 
     //public GameObject horda;
@@ -50,6 +52,7 @@ public class doisOurosScripts : MonoBehaviour
         }
 
         TomarDanoDeBala();
+        TomarDanoDeExplosion();
         Morrer();
 
         tempoEstado -= Time.deltaTime;
@@ -94,6 +97,13 @@ public class doisOurosScripts : MonoBehaviour
 
         }
 
+        if(other.CompareTag("explosion")){
+
+           
+            DanoDeExplosion = true;
+
+        }
+
     }
 
     void TomarDanoDeBala(){
@@ -103,6 +113,18 @@ public class doisOurosScripts : MonoBehaviour
             Debug.Log("era pra ter tomado dano");
             vida -= 1;
             DanoDeBala = false;
+            
+        }
+        
+    }
+
+    void TomarDanoDeExplosion(){
+
+        if(DanoDeExplosion == true){
+            
+           
+            vida -= 5;
+            DanoDeExplosion = false;
             
         }
         

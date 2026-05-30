@@ -13,6 +13,7 @@ TagManager:
   - tankDanoBox
   - Radio
   - explosion
+  - eneExplosion
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ public class treisPausScript : MonoBehaviour
     public GameObject bala;
 
     private bool DanoDeBala;
+    private bool DanoDeExplosion;
 
     private int vida = 3;
 
@@ -51,6 +52,7 @@ public class treisPausScript : MonoBehaviour
         }
 
         TomarDanoDeBala();
+        TomarDanoDeExplosion();
         Morrer();
 
         tempoEstado -= Time.deltaTime;
@@ -60,7 +62,7 @@ public class treisPausScript : MonoBehaviour
 
         if(estado >= 0 && estado <= 2) andar();
         if(estado >= 3 && estado <= 5) parar();
-        if(estado == 6){ 
+        if( estado == 6){
 
             atirar();
             Debug.Log("era pra atirar bro");
@@ -95,15 +97,34 @@ public class treisPausScript : MonoBehaviour
 
         }
 
+        if(other.CompareTag("explosion")){
+
+           
+            DanoDeExplosion = true;
+
+        }
+
     }
 
     void TomarDanoDeBala(){
 
         if(DanoDeBala == true){
             
-            Debug.Log("era pra ter tomado dano");
+           
             vida -= 1;
             DanoDeBala = false;
+            
+        }
+        
+    }
+
+    void TomarDanoDeExplosion(){
+
+        if(DanoDeExplosion == true){
+            
+           
+            vida -= 5;
+            DanoDeExplosion = false;
             
         }
         

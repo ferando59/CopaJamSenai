@@ -1318,6 +1318,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 4018133264426613233, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
+      propertyPath: m_TagString
+      value: tankDanoBox
+      objectReference: {fileID: 0}
     - target: {fileID: 4536256262943898090, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
       propertyPath: copasHearts
       value: 

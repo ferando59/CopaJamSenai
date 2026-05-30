@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::treisPausScript
   balaExitPointDoisOuro: {fileID: 7062605343077807258}
-  bala: {fileID: 7133595060827951300, guid: 175c53b882aaf5c4da31033770a78dc5, type: 3}
+  bala: {fileID: 3988999682229654935, guid: b1c0e2d81a41eb84abca2022ac514a7a, type: 3}
 --- !u!1 &7062605343077807258
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 7062605343077807258}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.503, z: 0}
+  m_LocalPosition: {x: 0, y: -0.514, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
