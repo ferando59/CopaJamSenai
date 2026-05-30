@@ -87,7 +87,7 @@ public class doisOurosScripts : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other){
         
-        if(other.CompareTag("bala")){
+        if(other.CompareTag("bala") || other.CompareTag("Radio")){
 
            
             DanoDeBala = true;

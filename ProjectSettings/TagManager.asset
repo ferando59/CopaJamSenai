@@ -11,6 +11,7 @@ TagManager:
   - EneBalaGranada
   - EneBalaMiniGun
   - tankDanoBox
+  - Radio
   layers:
   - Default
   - TransparentFX
