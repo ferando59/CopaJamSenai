@@ -942,11 +942,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &1163729107 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3159354441680635888, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
-  m_PrefabInstance: {fileID: 7917566815809352589}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1211165899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,18 +1318,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    - target: {fileID: 1467144756486317873, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
-      propertyPath: copasGuns.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467144756486317873, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
-      propertyPath: 'copasGuns.Array.data[1]'
+    - target: {fileID: 4536256262943898090, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
+      propertyPath: copasHearts
       value: 
-      objectReference: {fileID: 1163729107}
-    - target: {fileID: 3159354441680635888, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1082192229285333887, guid: d67e8aacdf1b88f44bd880acefa0db50, type: 3}
     - target: {fileID: 6081471040960419946, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.54163
@@ -1376,7 +1363,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3998049464692558760, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}

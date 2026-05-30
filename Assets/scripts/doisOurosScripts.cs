@@ -43,7 +43,7 @@ public class doisOurosScripts : MonoBehaviour
 
         }
 
-        if(distanciaDoInimigo == 200){
+        if(distanciaDoInimigo == 100){
             
             distanciaDoInimigoEstaCerta = true;
 

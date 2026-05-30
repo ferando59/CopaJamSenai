@@ -44,7 +44,7 @@ public class quaEspadasScript : MonoBehaviour
 
         }
 
-        if(distanciaDoInimigo == 200){
+        if(distanciaDoInimigo == 100){
             
             distanciaDoInimigoEstaCerta = true;
 

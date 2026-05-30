@@ -12,6 +12,7 @@ TagManager:
   - EneBalaMiniGun
   - tankDanoBox
   - Radio
+  - explosion
   layers:
   - Default
   - TransparentFX
