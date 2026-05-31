@@ -15,6 +15,7 @@ public class doisOurosScripts : MonoBehaviour
     private int vida = 3;
 
     //public GameObject horda;
+    PointCounterScript PC;
     HordesScript HS;
 
     private bool distanciaDoInimigoEstaCerta = false;
@@ -23,6 +24,7 @@ public class doisOurosScripts : MonoBehaviour
 
     void Start()
     {
+       PC = FindAnyObjectByType<PointCounterScript>();
        HS = FindAnyObjectByType<HordesScript>();
     }
 
@@ -136,7 +138,7 @@ public class doisOurosScripts : MonoBehaviour
 
            
             HS.kills+=1;
-            HS.points+=200;
+            PC.points+=200;
             Destroy(gameObject);
 
         }

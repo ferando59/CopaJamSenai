@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SoundMaker : MonoBehaviour
 {
@@ -7,10 +8,12 @@ public class SoundMaker : MonoBehaviour
 public AudioSource soundMaker;
 public AudioClip click;
 
+public TMP_Text seusPontos;
+
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        seusPontos.text = "your score: "+PointCounterScript.instance.points;
     }
 
    
@@ -26,6 +29,13 @@ public AudioClip click;
     {
         
         SceneManager.LoadScene(1);
+        
+    }
+
+     public void irMenu()
+    {
+        
+        SceneManager.LoadScene(0);
         
     }
 

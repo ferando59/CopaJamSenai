@@ -14,6 +14,7 @@ public class treisPausScript : MonoBehaviour
     private int vida = 3;
 
     //public GameObject horda;
+    PointCounterScript PC;
     HordesScript HS;
 
     private bool distanciaDoInimigoEstaCerta = false;
@@ -22,6 +23,7 @@ public class treisPausScript : MonoBehaviour
 
     void Start()
     {
+       PC = FindAnyObjectByType<PointCounterScript>();
        HS = FindAnyObjectByType<HordesScript>();
     }
 
@@ -136,7 +138,7 @@ public class treisPausScript : MonoBehaviour
 
            
             HS.kills+=1;
-            HS.points+=300;
+            PC.points+=300;
             Destroy(gameObject);
 
         }

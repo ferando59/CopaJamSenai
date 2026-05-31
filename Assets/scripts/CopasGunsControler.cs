@@ -4,6 +4,8 @@ public class CopasGunsControler : MonoBehaviour
 {
    public GameObject[] copasGuns;
    private int armaAtual = 0;
+
+   public int maxArmaLiberada = 0;
     void Start()
     {
         
@@ -15,7 +17,7 @@ public class CopasGunsControler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             armaAtual++;
-            if(armaAtual >= copasGuns.Length)
+            if(armaAtual >= maxArmaLiberada)
             armaAtual = 0;
             TrocarArma(armaAtual);
         }
@@ -24,7 +26,7 @@ public class CopasGunsControler : MonoBehaviour
         {
             armaAtual--;
             if(armaAtual < 0)
-            armaAtual = copasGuns.Length -1;
+            armaAtual = maxArmaLiberada;
             TrocarArma(armaAtual);
         }
     }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BaseScript : MonoBehaviour
 {
@@ -29,6 +30,14 @@ public class BaseScript : MonoBehaviour
         TomarDanoDeBalaSniper();
         TomarDanoDeExplosion();
         TomarDanoDeMiniGun();
+
+    if(vidaAtual <= 0)
+        {
+            
+             SceneManager.LoadScene(2);
+
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other){

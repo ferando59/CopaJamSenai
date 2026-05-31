@@ -18,6 +18,7 @@ public class ValetePausScript : MonoBehaviour
     private int vida = 50;
 
     //public GameObject horda;
+    PointCounterScript PC;
     HordesScript HS;
 
     private bool distanciaDoInimigoEstaCerta = false;
@@ -36,6 +37,7 @@ public class ValetePausScript : MonoBehaviour
 
     void Start()
     {
+       PC = FindAnyObjectByType<PointCounterScript>();
        HS = FindAnyObjectByType<HordesScript>();
        intervalo = intervaloTiros;
     }
@@ -183,7 +185,7 @@ public class ValetePausScript : MonoBehaviour
 
            
             HS.kills+=1;
-            HS.points+=10000;
+            PC.points+=10000;
             Destroy(gameObject);
 
         }

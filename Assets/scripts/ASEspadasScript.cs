@@ -1,18 +1,17 @@
 using UnityEngine;
 
-public class quaEspadasScript : MonoBehaviour
+public class ASEspadasScript : MonoBehaviour
 {
     private int estado;
     private float tempoEstado;
-
-    public GameObject balaExitPointDoisOuro;
+    public GameObject balaExitPointMiniGun1;
     public GameObject bala;
 
     private bool DanoDeBala;
 
      private bool DanoDeExplosion;
 
-    private int vida = 5;
+    private int vida = 100;
 
     //public GameObject horda;
     PointCounterScript PC;
@@ -21,25 +20,48 @@ public class quaEspadasScript : MonoBehaviour
     private bool distanciaDoInimigoEstaCerta = false;
     private int distanciaDoInimigo = 0;
 
+    private int disHorizontal = 0;
+
+    public float intervaloTiros = 3;
+    private float intervalo;
+
+    public AudioSource asAudio;
+    public AudioClip sniper;
+
+    private int podeTocar;
+
 
     void Start()
     {
        PC = FindAnyObjectByType<PointCounterScript>();
        HS = FindAnyObjectByType<HordesScript>();
+       intervalo = intervaloTiros;
     }
 
     void EscolherEstado(){
 
-        estado = Random.Range(0, 7);
+        estado = Random.Range(0, 8);
 
-        if(estado == 6) tempoEstado = Random.Range(0.1f,0.5f);
-        if(estado >= 3 && estado <= 5) tempoEstado = Random.Range(1f,5f);
-        if(estado >= 0 && estado <= 2) tempoEstado = 0.00001f;
+        if(estado >= 0 && estado <= 2) tempoEstado = Random.Range(0.5f,5f);
+        if(estado >= 3 && estado <= 5) tempoEstado = Random.Range(0.5f,5f);
+        if(estado == 6) tempoEstado = 3f;
+        if(estado == 7) tempoEstado = 3f;
+
+        podeTocar = estado;
     }
 
    
     void Update()
     {
+
+        //if(podeTocar == 6)
+       // {
+      //      podeTocar = 0;
+      //      valeteAudio.PlayOneShot(sniper);
+
+      //  }
+
+        intervaloTiros -= Time.deltaTime;
 
         if(distanciaDoInimigoEstaCerta == false){
             
@@ -63,33 +85,48 @@ public class quaEspadasScript : MonoBehaviour
         if(tempoEstado <= 0)
           EscolherEstado();
 
-        if(estado == 6) andar();
+        if(estado >= 0 && estado <= 2) andar();
         if(estado >= 3 && estado <= 5) parar();
-        if(estado >= 0 && estado <= 2){ 
+        if(estado == 6){ 
 
             atirar();
-            Debug.Log("era pra atirar bro");
+            //Debug.Log("era pra atirar bro");
         }
+        if(estado == 7)  atirar();
         
     }
 
     void andar(){
 
-        transform.position += transform.up * -1f * Time.deltaTime;
+        if(disHorizontal < 400){
+        transform.position += transform.right * -3f * Time.deltaTime;
+        disHorizontal++;
+        }
 
     }
 
     void parar(){
-
-
+        
+        if(disHorizontal > -400){
+        transform.position += transform.right * 3f * Time.deltaTime;
+        disHorizontal--;
+        }
 
     }
 
     void atirar(){
 
-        Instantiate(bala, balaExitPointDoisOuro.transform.position, transform.rotation * Quaternion.Euler(0, 0, 180));
+        if(intervaloTiros <= 0){
+        Instantiate(bala, balaExitPointMiniGun1.transform.position, transform.rotation * Quaternion.Euler(0, 0, 180));
+        asAudio.PlayOneShot(sniper);
+        }
+
+        if(intervaloTiros <= 0){
+            intervaloTiros = intervalo;
+        }
 
     }
+
 
     private void OnTriggerEnter2D(Collider2D other){
         
@@ -139,10 +176,11 @@ public class quaEspadasScript : MonoBehaviour
 
            
             HS.kills+=1;
-            PC.points+=400;
+            PC.points+=20000;
             Destroy(gameObject);
 
         }
 
     }
 }
+
