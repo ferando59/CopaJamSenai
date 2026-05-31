@@ -1,0 +1,118 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class BaseScript : MonoBehaviour
+{
+
+    public Slider barraVida;
+    private float vida = 1000;
+    private float vidaAtual;
+    private bool DanoDeBala;
+    private bool DanoDeBalaSniper;
+    private bool DanoDeExplosion;
+
+    private bool DanoDeBalaMiniGun;
+  
+  
+    void Start()
+    {
+        vidaAtual = vida;
+
+        barraVida.maxValue = vida;
+        barraVida.value = vidaAtual;
+    }
+
+    
+    void Update()
+    {
+        TomarDanoDeBala();
+        TomarDanoDeBalaSniper();
+        TomarDanoDeExplosion();
+        TomarDanoDeMiniGun();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other){
+        
+        if(other.CompareTag("EneBala")){
+
+           
+            DanoDeBala = true;
+
+        }
+
+        if(other.CompareTag("EneBalaSniper")){
+
+           
+            DanoDeBalaSniper = true;
+
+        }
+
+        if(other.CompareTag("eneExplosion")){
+
+           
+            DanoDeExplosion = true;
+
+        }
+
+        if(other.CompareTag("EneBalaMiniGun")){
+
+           
+            DanoDeBalaMiniGun = true;
+
+        }
+
+
+    }
+
+    void TomarDanoDeBala(){
+
+        if(DanoDeBala == true){
+            
+           
+            vidaAtual -= 1;
+            DanoDeBala = false;
+            barraVida.value = vidaAtual;
+            
+        }
+        
+    }
+
+    void TomarDanoDeBalaSniper(){
+
+        if(DanoDeBalaSniper == true){
+            
+           
+            vidaAtual -= 5;
+            DanoDeBalaSniper = false;
+            barraVida.value = vidaAtual;
+            
+        }
+        
+    }
+
+     void TomarDanoDeExplosion(){
+
+        if(DanoDeExplosion == true){
+            
+           
+            vidaAtual -= 10;
+            DanoDeExplosion = false;
+            barraVida.value = vidaAtual;
+            
+        }
+        
+    }
+
+    void TomarDanoDeMiniGun(){
+
+        if(DanoDeBalaMiniGun == true){
+            
+           
+            vidaAtual -= 10;
+            DanoDeBalaMiniGun = false;
+            barraVida.value = vidaAtual;
+            
+        }
+        
+    }
+}
