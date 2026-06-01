@@ -31,6 +31,7 @@ public class ValetePausScript : MonoBehaviour
 
     public AudioSource valeteAudio;
     public AudioClip miniGun;
+    public AudioClip ouch;
 
     private int podeTocar;
 
@@ -74,7 +75,7 @@ public class ValetePausScript : MonoBehaviour
 
         }
 
-        if(distanciaDoInimigo == 100){
+        if(distanciaDoInimigo == 400){
             
             distanciaDoInimigoEstaCerta = true;
 
@@ -102,7 +103,7 @@ public class ValetePausScript : MonoBehaviour
 
     void andar(){
 
-        if(disHorizontal < 400){
+        if(disHorizontal < 1000){
         transform.position += transform.right * -3f * Time.deltaTime;
         disHorizontal++;
         }
@@ -111,7 +112,7 @@ public class ValetePausScript : MonoBehaviour
 
     void parar(){
         
-        if(disHorizontal > -400){
+        if(disHorizontal > -1000){
         transform.position += transform.right * 3f * Time.deltaTime;
         disHorizontal--;
         }
@@ -143,6 +144,7 @@ public class ValetePausScript : MonoBehaviour
 
            
             DanoDeBala = true;
+            valeteAudio.PlayOneShot(ouch);
 
         }
 

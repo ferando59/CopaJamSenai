@@ -5,6 +5,9 @@ public class BalaGranadaScript : MonoBehaviour
 
     private float tempoDeTela = 0;
     public GameObject explosion;
+
+    public AudioSource granada;
+    public AudioClip explosionSound;
     
     void Start()
     {
@@ -21,6 +24,7 @@ public class BalaGranadaScript : MonoBehaviour
         if(tempoDeTela == 35){
 
             Instantiate(explosion, transform.position, transform.rotation);
+             granada.PlayOneShot(explosionSound);
             Destroy(gameObject);
 
         }
@@ -30,9 +34,10 @@ public class BalaGranadaScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
 
         if(other.CompareTag("tankDanoBox")){
-
+            
             Debug.Log("acertei");
-             Instantiate(explosion, transform.position, transform.rotation);
+            Instantiate(explosion, transform.position, transform.rotation);
+            granada.PlayOneShot(explosionSound);
             Destroy(gameObject);
 
         }

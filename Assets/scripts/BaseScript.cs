@@ -13,6 +13,9 @@ public class BaseScript : MonoBehaviour
     private bool DanoDeExplosion;
 
     private bool DanoDeBalaMiniGun;
+
+    public AudioSource baseAudio;
+    public AudioClip dano;
   
   
     void Start()
@@ -46,6 +49,7 @@ public class BaseScript : MonoBehaviour
 
            
             DanoDeBala = true;
+            baseAudio.PlayOneShot(dano);
 
         }
 
@@ -53,6 +57,7 @@ public class BaseScript : MonoBehaviour
 
            
             DanoDeBalaSniper = true;
+            baseAudio.PlayOneShot(dano);
 
         }
 
@@ -60,6 +65,7 @@ public class BaseScript : MonoBehaviour
 
            
             DanoDeExplosion = true;
+            baseAudio.PlayOneShot(dano);
 
         }
 
@@ -67,6 +73,7 @@ public class BaseScript : MonoBehaviour
 
            
             DanoDeBalaMiniGun = true;
+            baseAudio.PlayOneShot(dano);
 
         }
 

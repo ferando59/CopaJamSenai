@@ -29,7 +29,7 @@ public class BalaScriptEne : MonoBehaviour
 
         if(other.CompareTag("tankDanoBox")){
 
-            //Debug.Log("acertei");
+            Debug.Log("acertei");
             Destroy(gameObject);
 
         }

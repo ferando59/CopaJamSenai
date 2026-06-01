@@ -194,6 +194,7 @@ MonoBehaviour:
   intervaloTiros: 0.1
   valeteAudio: {fileID: -8965290968580670551}
   miniGun: {fileID: 8300000, guid: d6a887aa38ac47d499644ba99a3321a1, type: 3}
+  ouch: {fileID: 8300000, guid: 26c47995f2f847d43adeb630f4a1c315, type: 3}
 --- !u!82 &-8965290968580670551
 AudioSource:
   m_ObjectHideFlags: 0

@@ -32,6 +32,7 @@ public class HordesScript : MonoBehaviour
 
     public AudioSource HordeAudio;
     public AudioSource motorEngine;
+     public AudioSource radioAudio;
     public AudioClip enemyInComming;
     public AudioClip allCleared;
     public AudioClip bigOne;
@@ -210,7 +211,7 @@ public class HordesScript : MonoBehaviour
 
     if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
+        radioAudio.PlayOneShot(enemyInComming);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -263,7 +264,7 @@ public class HordesScript : MonoBehaviour
             distancia = 51;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
 
         }
 
@@ -273,7 +274,7 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
+        radioAudio.PlayOneShot(enemyInComming);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -326,7 +327,7 @@ public class HordesScript : MonoBehaviour
             distancia = 101;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
 
         }
     }
@@ -335,7 +336,7 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
+        radioAudio.PlayOneShot(enemyInComming);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -388,7 +389,7 @@ public class HordesScript : MonoBehaviour
             distancia = 151;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
 
         }
     }
@@ -397,7 +398,7 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(bigOne);
+        radioAudio.PlayOneShot(bigOne);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -450,7 +451,7 @@ public class HordesScript : MonoBehaviour
             distancia = 201;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
             CGC.maxArmaLiberada = 1;
 
         }
@@ -460,7 +461,7 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
+        radioAudio.PlayOneShot(enemyInComming);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -513,7 +514,7 @@ public class HordesScript : MonoBehaviour
             distancia = 251;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
 
         }
     }
@@ -522,7 +523,7 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
+        radioAudio.PlayOneShot(enemyInComming);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -575,7 +576,7 @@ public class HordesScript : MonoBehaviour
             distancia = 301;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
 
         }
     }
@@ -584,7 +585,7 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
+        radioAudio.PlayOneShot(enemyInComming);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -637,7 +638,7 @@ public class HordesScript : MonoBehaviour
             distancia = 351;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
 
         }
     }
@@ -646,7 +647,7 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(bigOne);
+        radioAudio.PlayOneShot(bigOne);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -697,7 +698,7 @@ public class HordesScript : MonoBehaviour
             distancia = 401;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
              CGC.maxArmaLiberada = 2;
 
         }
@@ -707,7 +708,7 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
+        radioAudio.PlayOneShot(enemyInComming);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -760,7 +761,7 @@ public class HordesScript : MonoBehaviour
             distancia = 451;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
 
         }
     }
@@ -769,7 +770,7 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
+        radioAudio.PlayOneShot(enemyInComming);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -822,7 +823,7 @@ public class HordesScript : MonoBehaviour
             distancia = 501;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
 
         }
     }
@@ -831,7 +832,7 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
+        radioAudio.PlayOneShot(enemyInComming);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -884,7 +885,7 @@ public class HordesScript : MonoBehaviour
             distancia = 551;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
 
         }
     }
@@ -893,7 +894,7 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
+        radioAudio.PlayOneShot(enemyInComming);
 
         if (numeroHorda == 4 || numeroHorda == 8)
         {
@@ -946,7 +947,7 @@ public class HordesScript : MonoBehaviour
             distancia = 601;
             HordaEstaEmAndamento = false;
             numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
+            radioAudio.PlayOneShot(allCleared);
 
         }
     }

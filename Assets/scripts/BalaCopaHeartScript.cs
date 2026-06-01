@@ -5,6 +5,9 @@ public class BalaCopaHeartScript : MonoBehaviour
 
     private float tempoDeTela = 0;
     public GameObject explosion;
+
+    public AudioSource granada;
+    public AudioClip explosionSound;
     
     void Start()
     {
@@ -21,6 +24,7 @@ public class BalaCopaHeartScript : MonoBehaviour
         if(tempoDeTela == 35){
 
             Instantiate(explosion, transform.position, transform.rotation);
+             granada.PlayOneShot(explosionSound);
             Destroy(gameObject);
 
         }
@@ -33,6 +37,7 @@ public class BalaCopaHeartScript : MonoBehaviour
 
             Debug.Log("acertei");
              Instantiate(explosion, transform.position, transform.rotation);
+              granada.PlayOneShot(explosionSound);
             Destroy(gameObject);
 
         }

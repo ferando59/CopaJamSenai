@@ -27,6 +27,7 @@ public class ASEspadasScript : MonoBehaviour
 
     public AudioSource asAudio;
     public AudioClip sniper;
+    public AudioClip ouch;
 
     private int podeTocar;
 
@@ -70,7 +71,7 @@ public class ASEspadasScript : MonoBehaviour
 
         }
 
-        if(distanciaDoInimigo == 100){
+        if(distanciaDoInimigo == 400){
             
             distanciaDoInimigoEstaCerta = true;
 
@@ -134,6 +135,7 @@ public class ASEspadasScript : MonoBehaviour
 
            
             DanoDeBala = true;
+            asAudio.PlayOneShot(ouch);
 
         }
 

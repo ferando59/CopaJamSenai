@@ -476,7 +476,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -563,8 +563,8 @@ Transform:
   m_GameObject: {fileID: 4018133264426613233}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: -2.49, z: 0}
-  m_LocalScale: {x: 13.727926, y: 3.0365, z: 1}
+  m_LocalPosition: {x: -0.4, y: -0.26, z: 0}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6081471040960419946}
@@ -618,8 +618,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
+  m_Sprite: {fileID: 21300000, guid: db27fabbeb491f84486d4df341d77b5b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -772,17 +772,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.35}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.921875, y: 1.125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.49, y: 0.37}
   m_EdgeRadius: 0
 --- !u!1 &4998539146996181275
 GameObject:
@@ -809,7 +809,7 @@ Transform:
   m_GameObject: {fileID: 4998539146996181275}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.599, z: 0}
+  m_LocalPosition: {x: 0, y: 0.401, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -843,8 +843,8 @@ Transform:
   m_GameObject: {fileID: 7003839379136750433}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.55, y: -1.55, z: 0}
-  m_LocalScale: {x: 1.592, y: 2.6575, z: 1}
+  m_LocalPosition: {x: -0.41, y: -1.71, z: 0}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7084792470747554344}
@@ -899,8 +899,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 30b3014f25d906848be94114b119aa0d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1073,6 +1073,7 @@ MonoBehaviour:
   player: {fileID: 1310030073627592452}
   valete: {fileID: 4541744478780456368, guid: a818df476b546f14aa4e26557f482d14, type: 3}
   ass: {fileID: 379388903393427156, guid: 31425efe3ad98ae4f966728fb9424306, type: 3}
+  drones: {fileID: 5603318982936889914, guid: f25feb87890cb834ba7d89c9b26eba5c, type: 3}
   kills: 0
   hordeBool: 1
   HordeAudio: {fileID: 6391623112816397240}
@@ -1081,6 +1082,7 @@ MonoBehaviour:
   allCleared: {fileID: 8300000, guid: a6683b485ad504744a68467c120d1572, type: 3}
   bigOne: {fileID: 8300000, guid: ed044e6835520744babad85e608eb914, type: 3}
   click: {fileID: 8300000, guid: 9557d67913f23f04d8adf0955f43cc0e, type: 3}
+  winGameTimer: 120
 --- !u!1 &8236180998341421471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,7 +1164,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.08315778, g: 1, b: 0, a: 0.043137256}

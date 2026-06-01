@@ -20,6 +20,10 @@ public class treisPausScript : MonoBehaviour
     private bool distanciaDoInimigoEstaCerta = false;
     private int distanciaDoInimigo = 0;
 
+    public AudioSource doisOuroAudio;
+    //public AudioClip tiro;
+    public AudioClip ouch;
+
 
     void Start()
     {
@@ -47,7 +51,7 @@ public class treisPausScript : MonoBehaviour
 
         }
 
-        if(distanciaDoInimigo == 100){
+        if(distanciaDoInimigo == 400){
             
             distanciaDoInimigoEstaCerta = true;
 
@@ -87,6 +91,7 @@ public class treisPausScript : MonoBehaviour
     void atirar(){
 
         Instantiate(bala, balaExitPointDoisOuro.transform.position, transform.rotation * Quaternion.Euler(0, 0, 180));
+        //doisOuroAudio.PlayOneShot(tiro);
 
     }
 
@@ -96,6 +101,7 @@ public class treisPausScript : MonoBehaviour
 
            
             DanoDeBala = true;
+            doisOuroAudio.PlayOneShot(ouch);
 
         }
 

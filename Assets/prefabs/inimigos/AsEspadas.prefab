@@ -112,6 +112,7 @@ MonoBehaviour:
   intervaloTiros: 3
   asAudio: {fileID: 399821086850214291}
   sniper: {fileID: 8300000, guid: decee247e5ef6c241a827601191e2702, type: 3}
+  ouch: {fileID: 8300000, guid: 26c47995f2f847d43adeb630f4a1c315, type: 3}
 --- !u!82 &399821086850214291
 AudioSource:
   m_ObjectHideFlags: 0

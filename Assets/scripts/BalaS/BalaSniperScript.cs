@@ -20,6 +20,7 @@ public class BalaSniperScript : MonoBehaviour
         if(tempoDeTela == 100){
 
             Destroy(gameObject);
+            //Debug.Log("morri");
 
         }
 
