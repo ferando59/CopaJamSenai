@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HordesScript : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class HordesScript : MonoBehaviour
     public GameObject player;
     public GameObject valete;
     public GameObject ass;
+    public GameObject drones;
 
     private bool HordaEstaEmAndamento = false;
 
@@ -36,6 +38,8 @@ public class HordesScript : MonoBehaviour
 
     public AudioClip click;
 
+    public float winGameTimer = 120;
+
     CopasGunsControler CGC;
 
     
@@ -47,9 +51,24 @@ public class HordesScript : MonoBehaviour
          CGC = FindAnyObjectByType<CopasGunsControler>();
     }
 
+    void FixedUpdate()
+    {
+        if(numeroHorda == 12){
+        winGameTimer -= Time.deltaTime;
+        }
+
+    }
+
     
     void Update()
     {
+
+        if(winGameTimer <= 0)
+        {
+            
+            SceneManager.LoadScene(3);
+
+        }
 
         if(Input.GetMouseButtonDown(0))
         {
@@ -111,6 +130,30 @@ public class HordesScript : MonoBehaviour
 
         }
 
+        if(distancia >= 449 & distancia <= 450){
+
+            horda9();
+
+        }
+
+        if(distancia >= 499 & distancia <= 500){
+
+            horda10();
+
+        }
+
+        if(distancia >= 549 & distancia <= 550){
+
+            horda11();
+
+        }
+
+        if(distancia >= 599 & distancia <= 600){
+
+            horda12();
+
+        }
+
          andar(HordaEstaEmAndamento);
     }
 
@@ -169,9 +212,13 @@ public class HordesScript : MonoBehaviour
         HordaEstaEmAndamento = true;
         HordeAudio.PlayOneShot(enemyInComming);
 
-        if(numeroHorda == 4 || numeroHorda == 8)
+        if (numeroHorda == 4 || numeroHorda == 8)
         {
             enemiesCountControl = 1;
+        }
+        else if (numeroHorda == 12)
+        {
+            enemiesCountControl = 500000; // ou o número que tu quiser
         }
         else
         {
@@ -228,9 +275,13 @@ public class HordesScript : MonoBehaviour
         HordaEstaEmAndamento = true;
         HordeAudio.PlayOneShot(enemyInComming);
 
-        if(numeroHorda == 4 || numeroHorda == 8)
+        if (numeroHorda == 4 || numeroHorda == 8)
         {
             enemiesCountControl = 1;
+        }
+        else if (numeroHorda == 12)
+        {
+            enemiesCountControl = 500000; // ou o número que tu quiser
         }
         else
         {
@@ -286,9 +337,13 @@ public class HordesScript : MonoBehaviour
         HordaEstaEmAndamento = true;
         HordeAudio.PlayOneShot(enemyInComming);
 
-        if(numeroHorda == 4 || numeroHorda == 8)
+        if (numeroHorda == 4 || numeroHorda == 8)
         {
             enemiesCountControl = 1;
+        }
+        else if (numeroHorda == 12)
+        {
+            enemiesCountControl = 500000; // ou o número que tu quiser
         }
         else
         {
@@ -344,9 +399,13 @@ public class HordesScript : MonoBehaviour
         HordaEstaEmAndamento = true;
         HordeAudio.PlayOneShot(bigOne);
 
-        if(numeroHorda == 4 || numeroHorda == 8)
+        if (numeroHorda == 4 || numeroHorda == 8)
         {
             enemiesCountControl = 1;
+        }
+        else if (numeroHorda == 12)
+        {
+            enemiesCountControl = 500000; // ou o número que tu quiser
         }
         else
         {
@@ -403,67 +462,13 @@ public class HordesScript : MonoBehaviour
         HordaEstaEmAndamento = true;
         HordeAudio.PlayOneShot(enemyInComming);
 
-        if(numeroHorda == 4 || numeroHorda == 8)
+        if (numeroHorda == 4 || numeroHorda == 8)
         {
             enemiesCountControl = 1;
         }
-        else
+        else if (numeroHorda == 12)
         {
-            enemiesCountControl = enemiesCount + numeroHorda;
-        }
-
-        hordeBool = true;
-    }
-
-        //inicio
-        timerHordeControl -= Time.deltaTime;
-
-        
-
-        if(hordeBool && enemiesCountControl > 0 && timerHordeControl <= 0){
-
-            int escolha = Random.Range(0, inimigos.Length);
-
-        Instantiate(inimigos[escolha], new Vector3(Random.Range(-8f, 8f), transform.position.y, transform.position.z), transform.rotation);
-
-        enemiesCountControl -= 1;
-        Debug.Log("Instanciou" + enemiesCountControl);
-        } else if(enemiesCountControl == 0){
-        hordeBool = false;
-        }
-
-        if(timerHordeControl < 0){
-            timerHordeControl = timerControl;
-
-        }
-
-        //enemiesCountControl quantidade de inimigos da horda
-        //timerHordeControl tempo de horda
-        //hordeBool controle booleano se pode iniciar instancias ou nao
-
-        //fim
-
-         if(kills == 7){
-
-            timerControl = 2;
-            kills = 0;
-            distancia = 251;
-            HordaEstaEmAndamento = false;
-            numeroHorda++;
-            HordeAudio.PlayOneShot(allCleared);
-
-        }
-    }
-
-    private void horda6(){
-
-        if(!HordaEstaEmAndamento){
-        HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
-
-        if(numeroHorda == 4 || numeroHorda == 8)
-        {
-            enemiesCountControl = 1;
+            enemiesCountControl = 500000; // ou o número que tu quiser
         }
         else
         {
@@ -503,9 +508,9 @@ public class HordesScript : MonoBehaviour
 
          if(kills == 8){
 
-            timerControl = 1;
+            timerControl = 2;
             kills = 0;
-            distancia = 301;
+            distancia = 251;
             HordaEstaEmAndamento = false;
             numeroHorda++;
             HordeAudio.PlayOneShot(allCleared);
@@ -513,15 +518,19 @@ public class HordesScript : MonoBehaviour
         }
     }
 
-    private void horda7(){
+    private void horda6(){
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
         HordeAudio.PlayOneShot(enemyInComming);
 
-        if(numeroHorda == 4 || numeroHorda == 8)
+        if (numeroHorda == 4 || numeroHorda == 8)
         {
             enemiesCountControl = 1;
+        }
+        else if (numeroHorda == 12)
+        {
+            enemiesCountControl = 500000; // ou o número que tu quiser
         }
         else
         {
@@ -563,6 +572,68 @@ public class HordesScript : MonoBehaviour
 
             timerControl = 1;
             kills = 0;
+            distancia = 301;
+            HordaEstaEmAndamento = false;
+            numeroHorda++;
+            HordeAudio.PlayOneShot(allCleared);
+
+        }
+    }
+
+    private void horda7(){
+
+        if(!HordaEstaEmAndamento){
+        HordaEstaEmAndamento = true;
+        HordeAudio.PlayOneShot(enemyInComming);
+
+        if (numeroHorda == 4 || numeroHorda == 8)
+        {
+            enemiesCountControl = 1;
+        }
+        else if (numeroHorda == 12)
+        {
+            enemiesCountControl = 500000; // ou o número que tu quiser
+        }
+        else
+        {
+            enemiesCountControl = enemiesCount + numeroHorda;
+        }
+
+        hordeBool = true;
+    }
+
+        //inicio
+        timerHordeControl -= Time.deltaTime;
+
+        
+
+        if(hordeBool && enemiesCountControl > 0 && timerHordeControl <= 0){
+
+            int escolha = Random.Range(0, inimigos.Length);
+
+        Instantiate(inimigos[escolha], new Vector3(Random.Range(-8f, 8f), transform.position.y, transform.position.z), transform.rotation);
+
+        enemiesCountControl -= 1;
+        Debug.Log("Instanciou" + enemiesCountControl);
+        } else if(enemiesCountControl == 0){
+        hordeBool = false;
+        }
+
+        if(timerHordeControl < 0){
+            timerHordeControl = timerControl;
+
+        }
+
+        //enemiesCountControl quantidade de inimigos da horda
+        //timerHordeControl tempo de horda
+        //hordeBool controle booleano se pode iniciar instancias ou nao
+
+        //fim
+
+         if(kills == 10){
+
+            timerControl = 1;
+            kills = 0;
             distancia = 351;
             HordaEstaEmAndamento = false;
             numeroHorda++;
@@ -575,11 +646,15 @@ public class HordesScript : MonoBehaviour
 
         if(!HordaEstaEmAndamento){
         HordaEstaEmAndamento = true;
-        HordeAudio.PlayOneShot(enemyInComming);
+        HordeAudio.PlayOneShot(bigOne);
 
-        if(numeroHorda == 4 || numeroHorda == 8)
+        if (numeroHorda == 4 || numeroHorda == 8)
         {
             enemiesCountControl = 1;
+        }
+        else if (numeroHorda == 12)
+        {
+            enemiesCountControl = 500000; // ou o número que tu quiser
         }
         else
         {
@@ -624,6 +699,254 @@ public class HordesScript : MonoBehaviour
             numeroHorda++;
             HordeAudio.PlayOneShot(allCleared);
              CGC.maxArmaLiberada = 2;
+
+        }
+    }
+
+    private void horda9(){
+
+        if(!HordaEstaEmAndamento){
+        HordaEstaEmAndamento = true;
+        HordeAudio.PlayOneShot(enemyInComming);
+
+        if (numeroHorda == 4 || numeroHorda == 8)
+        {
+            enemiesCountControl = 1;
+        }
+        else if (numeroHorda == 12)
+        {
+            enemiesCountControl = 500000; // ou o número que tu quiser
+        }
+        else
+        {
+            enemiesCountControl = enemiesCount + numeroHorda;
+        }
+
+        hordeBool = true;
+    }
+
+        //inicio
+        timerHordeControl -= Time.deltaTime;
+
+        
+
+        if(hordeBool && enemiesCountControl > 0 && timerHordeControl <= 0){
+
+            int escolha = Random.Range(0, inimigos.Length);
+
+        Instantiate(inimigos[escolha], new Vector3(Random.Range(-8f, 8f), transform.position.y, transform.position.z), transform.rotation);
+
+        enemiesCountControl -= 1;
+        Debug.Log("Instanciou" + enemiesCountControl);
+        } else if(enemiesCountControl == 0){
+        hordeBool = false;
+        }
+
+        if(timerHordeControl < 0){
+            timerHordeControl = timerControl;
+
+        }
+
+        //enemiesCountControl quantidade de inimigos da horda
+        //timerHordeControl tempo de horda
+        //hordeBool controle booleano se pode iniciar instancias ou nao
+
+        //fim
+
+         if(kills == 12){
+
+            timerControl = 0.5f;
+            kills = 0;
+            distancia = 451;
+            HordaEstaEmAndamento = false;
+            numeroHorda++;
+            HordeAudio.PlayOneShot(allCleared);
+
+        }
+    }
+
+    private void horda10(){
+
+        if(!HordaEstaEmAndamento){
+        HordaEstaEmAndamento = true;
+        HordeAudio.PlayOneShot(enemyInComming);
+
+        if (numeroHorda == 4 || numeroHorda == 8)
+        {
+            enemiesCountControl = 1;
+        }
+        else if (numeroHorda == 12)
+        {
+            enemiesCountControl = 500000; // ou o número que tu quiser
+        }
+        else
+        {
+            enemiesCountControl = enemiesCount + numeroHorda;
+        }
+
+        hordeBool = true;
+    }
+
+        //inicio
+        timerHordeControl -= Time.deltaTime;
+
+        
+
+        if(hordeBool && enemiesCountControl > 0 && timerHordeControl <= 0){
+
+            int escolha = Random.Range(0, inimigos.Length);
+
+        Instantiate(inimigos[escolha], new Vector3(Random.Range(-8f, 8f), transform.position.y, transform.position.z), transform.rotation);
+
+        enemiesCountControl -= 1;
+        Debug.Log("Instanciou" + enemiesCountControl);
+        } else if(enemiesCountControl == 0){
+        hordeBool = false;
+        }
+
+        if(timerHordeControl < 0){
+            timerHordeControl = timerControl;
+
+        }
+
+        //enemiesCountControl quantidade de inimigos da horda
+        //timerHordeControl tempo de horda
+        //hordeBool controle booleano se pode iniciar instancias ou nao
+
+        //fim
+
+         if(kills == 13){
+
+            timerControl = 0.5f;
+            kills = 0;
+            distancia = 501;
+            HordaEstaEmAndamento = false;
+            numeroHorda++;
+            HordeAudio.PlayOneShot(allCleared);
+
+        }
+    }
+
+    private void horda11(){
+
+        if(!HordaEstaEmAndamento){
+        HordaEstaEmAndamento = true;
+        HordeAudio.PlayOneShot(enemyInComming);
+
+        if (numeroHorda == 4 || numeroHorda == 8)
+        {
+            enemiesCountControl = 1;
+        }
+        else if (numeroHorda == 12)
+        {
+            enemiesCountControl = 500000; // ou o número que tu quiser
+        }
+        else
+        {
+            enemiesCountControl = enemiesCount + numeroHorda;
+        }
+
+        hordeBool = true;
+    }
+
+        //inicio
+        timerHordeControl -= Time.deltaTime;
+
+        
+
+        if(hordeBool && enemiesCountControl > 0 && timerHordeControl <= 0){
+
+            int escolha = Random.Range(0, inimigos.Length);
+
+        Instantiate(inimigos[escolha], new Vector3(Random.Range(-8f, 8f), transform.position.y, transform.position.z), transform.rotation);
+
+        enemiesCountControl -= 1;
+        Debug.Log("Instanciou" + enemiesCountControl);
+        } else if(enemiesCountControl == 0){
+        hordeBool = false;
+        }
+
+        if(timerHordeControl < 0){
+            timerHordeControl = timerControl;
+
+        }
+
+        //enemiesCountControl quantidade de inimigos da horda
+        //timerHordeControl tempo de horda
+        //hordeBool controle booleano se pode iniciar instancias ou nao
+
+        //fim
+
+         if(kills == 14){
+
+            timerControl = 0.5f;
+            kills = 0;
+            distancia = 551;
+            HordaEstaEmAndamento = false;
+            numeroHorda++;
+            HordeAudio.PlayOneShot(allCleared);
+
+        }
+    }
+
+    private void horda12(){
+
+        if(!HordaEstaEmAndamento){
+        HordaEstaEmAndamento = true;
+        HordeAudio.PlayOneShot(enemyInComming);
+
+        if (numeroHorda == 4 || numeroHorda == 8)
+        {
+            enemiesCountControl = 1;
+        }
+        else if (numeroHorda == 12)
+        {
+            enemiesCountControl = 500000; // ou o número que tu quiser
+        }
+        else
+        {
+            enemiesCountControl = enemiesCount + numeroHorda;
+        }
+
+        hordeBool = true;
+    }
+
+        //inicio
+        timerHordeControl -= Time.deltaTime;
+
+        
+
+        if(hordeBool && enemiesCountControl > 0 && timerHordeControl <= 0){
+
+            int escolha = Random.Range(0, inimigos.Length);
+
+        Instantiate(drones, new Vector3(Random.Range(-8f, 8f), transform.position.y, transform.position.z), transform.rotation);
+
+        enemiesCountControl -= 1;
+        Debug.Log("Instanciou" + enemiesCountControl);
+        } else if(enemiesCountControl == 0){
+        hordeBool = false;
+        }
+
+        if(timerHordeControl < 0){
+            timerHordeControl = timerControl;
+
+        }
+
+        //enemiesCountControl quantidade de inimigos da horda
+        //timerHordeControl tempo de horda
+        //hordeBool controle booleano se pode iniciar instancias ou nao
+
+        //fim
+
+         if(kills == 500000){
+
+            timerControl = 0.5f;
+            kills = 0;
+            distancia = 601;
+            HordaEstaEmAndamento = false;
+            numeroHorda++;
+            HordeAudio.PlayOneShot(allCleared);
 
         }
     }

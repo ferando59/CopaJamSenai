@@ -130,8 +130,8 @@ GameObject:
   - component: {fileID: 1052840521}
   - component: {fileID: 1052840520}
   - component: {fileID: 1052840519}
-  - component: {fileID: 1052840518}
   - component: {fileID: 1052840517}
+  - component: {fileID: 1052840522}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -236,20 +236,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1052840518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052840516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 810d305cc7bed3541a108c791747c8f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoundMaker
-  soundMaker: {fileID: 1052840517}
-  click: {fileID: 8300000, guid: 9557d67913f23f04d8adf0955f43cc0e, type: 3}
 --- !u!114 &1052840519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +297,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1052840522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052840516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46c6e22862991e498c2284ff66fb042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::trocaCena
+  soundMaker: {fileID: 1052840517}
+  click: {fileID: 8300000, guid: 9557d67913f23f04d8adf0955f43cc0e, type: 3}
 --- !u!1 &1241160135
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,8 +633,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1052840518}
-        m_TargetAssemblyTypeName: SoundMaker, Assembly-CSharp
+      - m_Target: {fileID: 1052840522}
+        m_TargetAssemblyTypeName: trocaCena, Assembly-CSharp
         m_MethodName: irProJogo
         m_Mode: 1
         m_Arguments:

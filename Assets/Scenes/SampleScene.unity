@@ -1345,57 +1345,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &1396170760 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4018133264426613233, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
-  m_PrefabInstance: {fileID: 7917566815809352589}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1396170765
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396170760}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1494862595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,25 +1965,17 @@ PrefabInstance:
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 2423629535232879525, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
-      propertyPath: ass
+      propertyPath: drones
       value: 
-      objectReference: {fileID: 379388903393427156, guid: 31425efe3ad98ae4f966728fb9424306, type: 3}
-    - target: {fileID: 2423629535232879525, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
-      propertyPath: click
-      value: 
-      objectReference: {fileID: 8300000, guid: 9557d67913f23f04d8adf0955f43cc0e, type: 3}
-    - target: {fileID: 2423629535232879525, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
-      propertyPath: bigOne
-      value: 
-      objectReference: {fileID: 8300000, guid: ed044e6835520744babad85e608eb914, type: 3}
-    - target: {fileID: 2423629535232879525, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
-      propertyPath: allCleared
-      value: 
-      objectReference: {fileID: 8300000, guid: a6683b485ad504744a68467c120d1572, type: 3}
-    - target: {fileID: 2423629535232879525, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
-      propertyPath: enemyInComming
-      value: 
-      objectReference: {fileID: 8300000, guid: 5ee5ef2c84770054987562daf44562fb, type: 3}
+      objectReference: {fileID: 5603318982936889914, guid: f25feb87890cb834ba7d89c9b26eba5c, type: 3}
+    - target: {fileID: 3788935266831363927, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151576675844583616, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6081471040960419946, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.54163
@@ -2079,13 +2020,14 @@ PrefabInstance:
       propertyPath: barraVida
       value: 
       objectReference: {fileID: 721816782}
+    - target: {fileID: 8778240361400225571, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4018133264426613233, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1396170765}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da26dd5b097b2c0459d3f668244e2864, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
