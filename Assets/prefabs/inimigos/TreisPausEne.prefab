@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.24066, y: 5.62585, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2472523244974817948}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae9a1698312e54140812006dbd4abbcd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,13 +133,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 0.875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.32, y: 0.66}
   m_EdgeRadius: 0
 --- !u!114 &-9125109981380525074
 MonoBehaviour:
@@ -156,7 +156,6 @@ MonoBehaviour:
   balaExitPointDoisOuro: {fileID: 7062605343077807258}
   bala: {fileID: 3988999682229654935, guid: b1c0e2d81a41eb84abca2022ac514a7a, type: 3}
   doisOuroAudio: {fileID: 9017526896474923787}
-  tiro: {fileID: 0}
   ouch: {fileID: 8300000, guid: 5c9670710ddfaf64785634cef5e39818, type: 3}
 --- !u!82 &9017526896474923787
 AudioSource:
@@ -280,7 +279,7 @@ Transform:
   m_GameObject: {fileID: 7062605343077807258}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.514, z: 0}
+  m_LocalPosition: {x: -0.14, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

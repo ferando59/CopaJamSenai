@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b1b47153de052a41a1308078e435987
+guid: 9bafc484e66c2ea43a4715c8c0d7fd27
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -123,23 +123,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "C\xF3pia de canhao_0"
+      name: drone2deouros-helices_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 13
-        width: 78
-        height: 104
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7be912c157c079390800000000000000
-      internalID: -7811761331528163657
+      spriteID: 57b8d55fc0e01d34d8cca16b1a369a05
+      internalID: -575052059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drone2deouros-helices_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431488e567bf41e4aa85ff500d24b3fc
+      internalID: 1881238992
       vertices: []
       indices: 
       edges: []
@@ -156,9 +178,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      "C\xF3pia de canhao_0": -7811761331528163657
+      drone2deouros-helices_0: -575052059
+      drone2deouros-helices_1: 1881238992
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

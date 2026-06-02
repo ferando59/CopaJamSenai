@@ -24,12 +24,14 @@ public class quaEspadasScript : MonoBehaviour
     public AudioSource doisOuroAudio;
     public AudioClip tiro;
     public AudioClip ouch;
+    public Animator anim;
 
 
     void Start()
     {
        PC = FindAnyObjectByType<PointCounterScript>();
        HS = FindAnyObjectByType<HordesScript>();
+       anim = GetComponent<Animator>();
     }
 
     void EscolherEstado(){
@@ -52,7 +54,7 @@ public class quaEspadasScript : MonoBehaviour
 
         }
 
-        if(distanciaDoInimigo == 400){
+        if(distanciaDoInimigo == 50){
             
             distanciaDoInimigoEstaCerta = true;
 
@@ -67,12 +69,36 @@ public class quaEspadasScript : MonoBehaviour
         if(tempoEstado <= 0)
           EscolherEstado();
 
-        if(estado == 6) andar();
-        if(estado >= 3 && estado <= 5) parar();
+        if(estado == 6){
+
+            andar();
+            anim.SetBool("shoting", false);
+            anim.SetBool("iswalking", true);
+            anim.SetBool("stoped", false);
+
+
+        } 
+
+
+
+        if(estado >= 3 && estado <= 5){
+
+             parar();
+             anim.SetBool("shoting", false);
+            anim.SetBool("iswalking", false);
+            anim.SetBool("stoped", true);
+
+
+        }
+        
+
         if(estado >= 0 && estado <= 2){ 
 
             atirar();
             Debug.Log("era pra atirar bro");
+            anim.SetBool("shoting", true);
+            anim.SetBool("iswalking", false);
+            anim.SetBool("stoped", false);
         }
         
     }

@@ -71,7 +71,7 @@ public class ASEspadasScript : MonoBehaviour
 
         }
 
-        if(distanciaDoInimigo == 400){
+        if(distanciaDoInimigo == 50){
             
             distanciaDoInimigoEstaCerta = true;
 
@@ -99,7 +99,7 @@ public class ASEspadasScript : MonoBehaviour
 
     void andar(){
 
-        if(disHorizontal < 400){
+        if(disHorizontal < 50){
         transform.position += transform.right * -3f * Time.deltaTime;
         disHorizontal++;
         }
@@ -108,7 +108,7 @@ public class ASEspadasScript : MonoBehaviour
 
     void parar(){
         
-        if(disHorizontal > -400){
+        if(disHorizontal > -50){
         transform.position += transform.right * 3f * Time.deltaTime;
         disHorizontal--;
         }

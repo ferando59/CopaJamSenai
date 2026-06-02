@@ -75,7 +75,7 @@ public class ValetePausScript : MonoBehaviour
 
         }
 
-        if(distanciaDoInimigo == 400){
+        if(distanciaDoInimigo == 50){
             
             distanciaDoInimigoEstaCerta = true;
 
@@ -103,7 +103,7 @@ public class ValetePausScript : MonoBehaviour
 
     void andar(){
 
-        if(disHorizontal < 1000){
+        if(disHorizontal < 125){
         transform.position += transform.right * -3f * Time.deltaTime;
         disHorizontal++;
         }
@@ -112,7 +112,7 @@ public class ValetePausScript : MonoBehaviour
 
     void parar(){
         
-        if(disHorizontal > -1000){
+        if(disHorizontal > -125){
         transform.position += transform.right * 3f * Time.deltaTime;
         disHorizontal--;
         }
